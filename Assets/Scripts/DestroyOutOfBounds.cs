@@ -6,9 +6,15 @@ public class DestroyOutOfBounds : MonoBehaviour
     public float botBounds = -10;
     void Update()
     {
-        if (transform.position.z > topBounds 
-            || transform.position.z < botBounds)
+        //Remove objects out of bounds
+        if (transform.position.z > topBounds)
             Destroy(gameObject);
+        else if (transform.position.z < botBounds)
+        {
+            Debug.Log("Game over");
+            Destroy(gameObject);
+        }
+            
     }
     
 }
